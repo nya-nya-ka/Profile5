@@ -1,0 +1,413 @@
+body {
+  
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #f3f3f3;
+}
+
+.centered-image {
+  width: 75.00vw; /* 横幅の3分の2 */
+  height: calc((100vh - 80px) * 3 / 4); /* ヘッダーを引いた領域の高さの3分の2 */
+  object-fit: cover; /* 画像を枠に合わせて拡大または縮小 */
+  position: absolute;
+  top: 55%; /* 画面の中央に配置 */
+  left: 50%; /* 画面の中央に配置 */
+  transform: translate(-50%, -50%); /* 中央揃え */
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 20px; /* 四隅を丸く */
+}
+
+.bar-container {
+  width: 100px; /* コンテナの幅 */
+  height: 70px; /* コンテナの高さ */
+  position: absolute; /* 絶対位置指定 */
+  top: calc(100vh * 25 / 32);
+  left: 49.9%;
+  overflow: hidden; /* はみ出した部分を隠す */
+}
+
+.bar {
+  width: 0.3px; /* バーの幅 */
+  height: 5px; /* 初期のバーの高さを半分に変更 */
+  background-color: #e0e0e0; /* バーの色 */
+  position: absolute; /* 絶対位置指定 */
+  animation: barAnimation 4s ease-in-out infinite; /* アニメーション適用 */
+}
+
+@keyframes barAnimation {
+  0% {
+    top: -10px; /* コンテナの外から開始 */
+    height: 10px; /* 初期の高さ */
+  }
+  25% {
+    top: 37.5px; /* コンテナ内に移動中 */
+    height: 37.5px; /* 長さが増加 */
+  }
+  50% {
+    top: 93.75px; /* コンテナの下部へ移動中 */
+    height: 56.25px; /* 最大の長さを半分に */
+  }
+  75% {
+    top: 112.5px; /* コンテナの外に向かう途中 */
+    height: 18.75px; /* 短くなり始める */
+  }
+  100% {
+    top: 120px; /* コンテナの外で終了 */
+    height: 10px; /* 初期の高さに戻る */
+  }
+}
+
+.small-logo {
+  position: absolute;
+  top: 10%;  /* 上からの位置を調整 */
+  left: 70%;
+  transform: translateX(-50%); /* 中央揃え */
+  width: 33vw; /* ロゴのサイズを調整 */
+  max-width: 200px; /* ロゴの最大サイズ */
+  z-index: 1; /* 背景の画像より手前に表示 */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+.page-title {
+  font-family: "Cormorant", serif;
+  font-weight: 200;
+  font-size: clamp(0.3rem, 3.4vw, 1.3rem);
+  color: #f5f2f2;
+  position: absolute;
+  top: 60%;         /* ← 上から60%の位置 */
+  left: 18%;        /* ← 左から10%の位置 */
+  transform: translate(0, -50%);  /* ← 縦中央揃え */
+  opacity: 1;       /* ← 表示するように */
+  z-index: 10;      /* ← 背景画像より前に */
+  letter-spacing: 0.5rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.wrapper2 {
+  background-color: #eceaea;
+  width: 100vw;
+  height: calc(100vh - 150px); /* ヘッダーを引いた高さに調整 */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper3 {
+  background-color: #f3f3f3;
+  width: 100vw;
+  height: calc(100vh - 120px); /* ヘッダーを引いた高さに調整 */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.top {
+  height: 200px;
+  background-color: #f3f3f3; /* wrapper2と同じ色 */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 200px), 0 100%);
+  z-index: 0;
+}
+
+.bottom {
+  height: 200px;
+  background-color: #eceaea; /* wrapper3と同じ色 */
+  clip-path: polygon(0 200px, 100% 0, 100% 100%, 0 100%);
+  margin-top: -200px; /* 重なりを作る */
+  z-index: 0;
+}
+
+.section2-1 {
+  padding-top: 0;
+  padding-left: 25vw;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(0, 73, 92);
+  font-size: clamp(0.7rem, 2vw, 1.0rem);
+  opacity: 0;
+  transform: translateX(30px);
+  transition: none;
+}
+
+.section2-3 {
+  padding-top: 100px;
+  padding-left: 25vw;
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #313131;
+  font-size: clamp(0.65rem, 1.8vw, 0.95rem);
+  opacity: 0;
+  transform: translateX(30px);
+  transition: none;
+}
+
+.section2-2{
+  padding-top: 0px;
+  padding-left: 20vw;
+  font-family: "Gilda Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(0, 73, 92);
+  font-size: clamp(0.80rem, 1.8vw, 1.35rem);
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.section2-4{
+  padding-top: 0px;
+  padding-left: 20vw;
+  font-family: "Gilda Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #888888;
+  font-size: clamp(0.70rem, 1.8vw, 1.05rem);
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.section2-5{
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #363636;
+  font-size: clamp(0.65rem, 1.8vw, 1.00rem);
+  opacity: 0;
+  transform: translateX(30px);
+  padding: 2.0rem; /* 内側の余白を追加 */
+  margin: 2em 25vw 0 25vw; /* 左右と上に余白を追加 */
+  background-color: #f9f9f9; /* 背景色を少し明るく */
+  border: 1px solid #f9f9f9; /* 枠線 */
+  border-radius: 20px; /* 角を丸く */
+}
+@media (max-width: 600px) {
+  .section2-5 {
+    padding: 1.2rem; /* 内側の余白を追加 */
+    margin: 2em 8vw 0 8vw;
+  }
+}
+
+.section4 {
+  padding-top: 60px;
+  font-family: "Klee One", cursive;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #a7a7a7;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-in {
+  animation: fadeUp 2.0s ease-out forwards;
+}
+
+header {
+  width: 100%;
+  float: left;
+  position: fixed;
+  top: 0;
+  background: rgb(0, 73, 92);
+  box-shadow: 0 0 5px rgb(0, 105, 131);
+  left: 0;
+  transition: 500ms;
+  transform: translateY(-100px);
+  z-index: 1000;
+}
+
+.visible {
+  transform: translateY(0);
+}
+
+.nav {
+  float: right;
+  text-align: center;
+}
+
+.nav li {
+  float: left;
+  position: relative;
+}
+
+.nav li a {
+  float: left;
+  line-height: 80px;
+  color: #918f8f;
+  position: relative;
+  font-size: 16px;
+  height: 80px;
+  font-weight: 400;
+  transition: 500ms;
+  padding: 0 25px;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 1;
+}
+
+.nav li:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  transition: 500ms;
+}
+
+.nav li:hover:after,
+.nav li.active:after {
+  height: 100%;
+  top: 0;
+  background: rgb(0, 105, 131);
+}
+
+.nav li:hover a,
+.nav li.active a {
+  color: #ffffff;
+}
+
+.logo {
+  line-height: 100px;
+  font-weight: 700;
+  color: #101010;
+  font-size: 50px;
+  text-align: center;
+  height: 100px;
+  float: left;
+}
+
+.logo img {
+  height: 80px;
+  position: relative;
+  top: 10px;
+}
+
+footer {
+  height: 200px;
+  background-color: #000;
+  color: #9b9b9b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  text-align: center;
+}
+
+.footer-text {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  margin: 0;
+  color: #9b9b9b;
+}
+
+.footer-text2 {
+  padding-top: 20px;
+  font-family: 'Alegreya Sans SC', sans-serif !important;
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  margin: 0;
+}
+
+.material-icons {
+  vertical-align: middle;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  color: #9b9b9b;
+  margin-right: 5px;
+}
+
+.material-symbols-outlined {
+  color: #c0c0c0;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.material-symbols-outlined:hover {
+  transform: scale(1.2);
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+*,
+*:after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .nav li a {
+    font-size: 9px;       /* スマホで読みやすい小さめサイズ */
+    padding: 0 12px;       /* 横幅に余白を調整 */
+    line-height: 60px;     /* 高さも調整して余裕を持たせる */
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 1.0rem;     /* ロゴの文字も縮小 */
+    line-height: 60px;
+    height: 60px;
+  }
+
+  header {
+    height: 60px;          /* ヘッダー自体の高さも変更したい場合 */
+  }
+
+  .logo img {
+    height: 50px;          /* ロゴ画像がある場合は高さも調整 */
+    top: 5px;
+  }
+
+  .section2-1,
+  .section2-3 {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  .page-title {
+    letter-spacing: 0.3rem; /* 文字間隔を狭める */
+  }
+}
